@@ -1,15 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { PieChartService } from './pie-chart.service';
 
 @Component({
   selector: 'pie-chart',
-  templateUrl: './pie-chart.component.html',
-  styleUrls: [
-    '../../../../node_modules/nvd3/build/nv.d3.css',
-    './pie-chart.component.css'
-  ],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './pie-chart.component.html'
 })
 export class PieChartComponent implements OnInit {
   options;

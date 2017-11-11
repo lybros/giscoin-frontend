@@ -1,10 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'charts',
-  templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.css'],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './charts.component.html'
 })
 export class ChartsComponent implements OnInit {
 

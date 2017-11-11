@@ -4,12 +4,7 @@ import { LineChartService } from './line-chart.service';
 
 @Component({
   selector: 'line-chart',
-  templateUrl: './line-chart.component.html',
-  styleUrls: [
-    '../../../../node_modules/nvd3/build/nv.d3.css',
-    './line-chart.component.css'
-  ],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './line-chart.component.html'
 })
 export class LineChartComponent implements OnInit {
   options;

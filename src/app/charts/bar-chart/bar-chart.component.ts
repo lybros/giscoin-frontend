@@ -1,15 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { BarChartService } from './bar-chart.service';
 
 @Component({
   selector: 'bar-chart',
-  templateUrl: './bar-chart.component.html',
-  styleUrls: [
-    '../../../../node_modules/nvd3/build/nv.d3.css',
-    './bar-chart.component.css'
-  ],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './bar-chart.component.html'
 })
 export class BarChartComponent implements OnInit {
   options;
