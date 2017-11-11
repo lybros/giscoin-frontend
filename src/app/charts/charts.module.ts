@@ -10,6 +10,7 @@ import { ChartsRoutingModule } from './charts-routing.module';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { BarChartService } from './bar-chart/bar-chart.service';
 
 
 @NgModule({
@@ -24,6 +25,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     NvD3Module,
     ChartsRoutingModule
   ],
-  providers: []
+  providers: [
+    BarChartService
+  ]
 })
 export class ChartsModule { }

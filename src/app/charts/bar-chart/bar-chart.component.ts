@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { BarChartService } from './bar-chart.service';
+
 @Component({
   selector: 'bar-chart',
   templateUrl: './bar-chart.component.html',
@@ -13,7 +15,7 @@ export class BarChartComponent implements OnInit {
   options;
   data;
 
-  constructor() {
+  constructor(private barChartService: BarChartService) {
     this.options = {
       chart: {
         type: 'discreteBarChart',
@@ -43,48 +45,6 @@ export class BarChartComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data = this.discreteBarChartData();
-  }
-
-  discreteBarChartData() {
-    return [
-      {
-        key: "sdadasd",
-        values: [
-          {
-            "label" : "A" ,
-            "value" : -29.765957771107
-          },
-          {
-            "label" : "B" ,
-            "value" : 0
-          },
-          {
-            "label" : "C" ,
-            "value" : 32.807804682612
-          },
-          {
-            "label" : "D" ,
-            "value" : 196.45946739256
-          },
-          {
-            "label" : "E" ,
-            "value" : 0.19434030906893
-          },
-          {
-            "label" : "F" ,
-            "value" : -98.079782601442
-          },
-          {
-            "label" : "G" ,
-            "value" : -13.925743130903
-          },
-          {
-            "label" : "H" ,
-            "value" : -5.1387322875705
-          }
-        ]
-      }
-    ]
+    this.barChartService.getData().subscribe(data => this.data = data);
   }
 }
