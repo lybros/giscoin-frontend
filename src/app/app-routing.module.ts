@@ -6,7 +6,6 @@ import { ChartsComponent }   from './charts/charts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
  
 const appRoutes: Routes = [
-  { path: '', component: AppComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
  
