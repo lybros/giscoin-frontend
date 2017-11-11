@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { PieChartService } from './pie-chart.service';
+
 @Component({
   selector: 'pie-chart',
   templateUrl: './pie-chart.component.html',
@@ -13,7 +15,7 @@ export class PieChartComponent implements OnInit {
   options;
   data;
 
-  constructor() {
+  constructor(private pieChartService: PieChartService) {
     this.options = {
       chart: {
         type: 'pieChart',
@@ -37,40 +39,6 @@ export class PieChartComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data = this.pieChartData();
+    this.pieChartService.getData().subscribe(data => this.data = data);
   }
-
-  pieChartData() {
-    return [
-      {
-        key: "One",
-        y: 5
-      },
-      {
-        key: "Two",
-        y: 2
-      },
-      {
-        key: "Three",
-        y: 9
-      },
-      {
-        key: "Four",
-        y: 7
-      },
-      {
-        key: "Five",
-        y: 4
-      },
-      {
-        key: "Six",
-        y: 3
-      },
-      {
-        key: "Seven",
-        y: .5
-      }
-    ];
-  }
-
 }
