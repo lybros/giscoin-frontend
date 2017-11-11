@@ -11,6 +11,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BarChartService } from './bar-chart/bar-chart.service';
+import { LineChartService } from './line-chart/line-chart.service';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { BarChartService } from './bar-chart/bar-chart.service';
     ChartsRoutingModule
   ],
   providers: [
-    BarChartService
+    BarChartService,
+    LineChartService
   ]
 })
 export class ChartsModule { }
