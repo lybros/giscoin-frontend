@@ -1,13 +1,5 @@
-import { Injectable } from '@angular/core';
-
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-
-@Injectable()
-export class LineChartService {
-  getData() { return Observable.of(this.sinAndCos()); }
-
-  private sinAndCos() {
+export class ChartsMock {
+  public sinAndCos() {
     let sin = [],
         sin2 = [],
         cos = [],
@@ -55,4 +47,75 @@ export class LineChartService {
         }
     ];
   }
+
+  public pieChartData = [
+    {
+      key: "One",
+      y: 5
+    },
+    {
+      key: "Two",
+      y: 2
+    },
+    {
+      key: "Three",
+      y: 9
+    },
+    {
+      key: "Four",
+      y: 7
+    },
+    {
+      key: "Five",
+      y: 4
+    },
+    {
+      key: "Six",
+      y: 3
+    },
+    {
+      key: "Seven",
+      y: .5
+    }
+  ];
+
+  public barChartData = [
+    {
+      key: "sdadasd",
+      values: [
+        {
+          "label" : "A" ,
+          "value" : -29.765957771107
+        },
+        {
+          "label" : "B" ,
+          "value" : 0
+        },
+        {
+          "label" : "C" ,
+          "value" : 32.807804682612
+        },
+        {
+          "label" : "D" ,
+          "value" : 196.45946739256
+        },
+        {
+          "label" : "E" ,
+          "value" : 0.19434030906893
+        },
+        {
+          "label" : "F" ,
+          "value" : -98.079782601442
+        },
+        {
+          "label" : "G" ,
+          "value" : -13.925743130903
+        },
+        {
+          "label" : "H" ,
+          "value" : -5.1387322875705
+        }
+      ]
+    }
+  ];
 }

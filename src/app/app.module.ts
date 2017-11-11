@@ -1,23 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { NvD3Module } from 'ng2-nvd3';
+import 'd3';
+import 'nvd3';
 
 import { AppComponent } from './app.component';
+import { ChartsComponent } from './charts/charts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ChartsModule } from './charts/charts.module';
+import { ChartsService } from './charts/charts.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ChartsComponent,
     PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    ChartsModule,
+    NvD3Module,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ChartsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
