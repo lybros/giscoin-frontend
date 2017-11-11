@@ -3,7 +3,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'bar-chart',
   templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.css'],
+  styleUrls: [
+    '../../../../node_modules/nvd3/build/nv.d3.css',
+    './bar-chart.component.css'
+  ],
   encapsulation: ViewEncapsulation.None
 })
 export class BarChartComponent implements OnInit {
@@ -46,6 +49,7 @@ export class BarChartComponent implements OnInit {
   discreteBarChartData() {
     return [
       {
+        key: "sdadasd",
         values: [
           {
             "label" : "A" ,
