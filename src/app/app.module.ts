@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NvD3Module } from 'ng2-nvd3';
 import 'nvd3';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ChartsComponent } from './charts/charts.component';
@@ -21,7 +22,8 @@ import { AuthService } from './auth.service';
     BrowserModule,
     NvD3Module,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ChartsService,
