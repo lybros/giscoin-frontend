@@ -8,10 +8,9 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
-        "favicon.ico"
+        "assets"
       ],
-      "index": "index.html",
+      "index": "assets/index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
@@ -19,7 +18,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "assets/styles.css",
+        "../node_modules/nvd3/build/nv.d3.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
