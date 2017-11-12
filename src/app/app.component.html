@@ -1,6 +1,12 @@
-<nav>
-  <a routerLink="" routerLinkActive="active">Start page</a>
-  <a routerLink="charts" routerLinkActive="active">Charts</a>
-  <a routerLink="map" routerLinkActive="active">Map</a>
-</nav>
-<router-outlet></router-outlet>
+<div *ngIf="tokenPresent(); else login">
+  <nav>
+    <a routerLink="" routerLinkActive="active">Start page</a>
+    <a routerLink="charts" routerLinkActive="active">Charts</a>
+    <a routerLink="map" routerLinkActive="active">Map</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+<ng-template #login>
+  <button (click)="onLogin()">Login</button>
+</ng-template>

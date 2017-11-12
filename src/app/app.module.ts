@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
 import { NvD3Module } from 'ng2-nvd3';
@@ -11,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { ChartsService } from './charts/charts.service';
 import { MapComponent } from './map/map.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { MapComponent } from './map/map.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpModule,
     LeafletModule.forRoot(),
     LeafletDrawModule.forRoot(),
     NvD3Module
   ],
   providers: [
-    ChartsService
+    ChartsService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
