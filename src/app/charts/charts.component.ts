@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ChartsService } from './charts.service';
+import { format } from 'd3';
 
 @Component({
   selector: 'charts',
@@ -34,7 +35,7 @@ export class ChartsComponent implements OnInit {
         yAxis: {
           axisLabel: 'Voltage (v)',
           tickFormat: function(d){
-            return d3.format('.02f')(d);
+            return format('.02f')(d);
           },
           axisLabelDistance: -10
         }
@@ -55,7 +56,7 @@ export class ChartsComponent implements OnInit {
         y: function(d) { return d.value; },
         showValues: true,
         valueFormat: function(d) {
-          return d3.format(',.4f')(d);
+          return format(',.4f')(d);
         },
         duration: 500,
         xAxis: {
