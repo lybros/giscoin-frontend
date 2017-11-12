@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { ChartsComponent } from './charts/charts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -18,4 +17,5 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

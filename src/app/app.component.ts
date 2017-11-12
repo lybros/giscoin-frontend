@@ -11,8 +11,9 @@ export class AppComponent implements OnInit {
     private auth: AuthService,
     private router: Router
   ) {
-    if (!this.tokenPresent())
+    if (!this.tokenPresent()) {
       this.router.navigateByUrl('/');
+    }
   }
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit {
 
   onLogin(): void {
     this.auth.login().then((data) => {
-      sessionStorage.setItem('token', data.token)
+      sessionStorage.setItem('token', data.token);
     })
     .catch((err) => {
       alert(err);

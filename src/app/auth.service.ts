@@ -6,15 +6,15 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AuthService {
-  private BASE_URL: string = 'http://localhost:5000/auth';
-  private headers: Headers = new Headers({
+  private BASE_URL = 'http://localhost:5000/auth';
+  private headers = new Headers({
     'Content-Type': 'application/json'
   });
 
   constructor(private http: Http) {}
 
   login(): Promise<any> {
-    let url: string = `${this.BASE_URL}/login`;
+    const url = `${this.BASE_URL}/login`;
     // return this.http.post(url, {headers: this.headers}).toPromise();
     return Observable.of({ token: 'TOKEN_EXAMPLE' }).toPromise();
   }
