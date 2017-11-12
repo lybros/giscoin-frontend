@@ -4,7 +4,7 @@ import { ChartsService } from './charts.service';
 import { format } from 'd3';
 
 @Component({
-  selector: 'charts',
+  selector: 'app-charts',
   templateUrl: './charts.component.html'
 })
 export class ChartsComponent implements OnInit {
@@ -20,21 +20,25 @@ export class ChartsComponent implements OnInit {
       chart: {
         type: 'lineChart',
         height: 450,
-        margin : {
+        margin: {
           top: 20,
           right: 20,
           bottom: 40,
           left: 55
         },
-        x: function(d) { return d.x; },
-        y: function(d) { return d.y; },
+        x: function (d) {
+          return d.x;
+        },
+        y: function (d) {
+          return d.y;
+        },
         useInteractiveGuideline: true,
         xAxis: {
           axisLabel: 'Time (ms)'
         },
         yAxis: {
           axisLabel: 'Voltage (v)',
-          tickFormat: function(d){
+          tickFormat: function (d) {
             return format('.02f')(d);
           },
           axisLabelDistance: -10
@@ -46,16 +50,20 @@ export class ChartsComponent implements OnInit {
       chart: {
         type: 'discreteBarChart',
         height: 450,
-        margin : {
+        margin: {
           top: 20,
           right: 20,
           bottom: 50,
           left: 55
         },
-        x: function(d) { return d.label; },
-        y: function(d) { return d.value; },
+        x: function (d) {
+          return d.label;
+        },
+        y: function (d) {
+          return d.value;
+        },
         showValues: true,
-        valueFormat: function(d) {
+        valueFormat: function (d) {
           return format(',.4f')(d);
         },
         duration: 500,
@@ -73,8 +81,12 @@ export class ChartsComponent implements OnInit {
       chart: {
         type: 'pieChart',
         height: 500,
-        x: function(d){return d.key;},
-        y: function(d){return d.y;},
+        x: function (d) {
+          return d.key;
+        },
+        y: function (d) {
+          return d.y;
+        },
         showLabels: true,
         duration: 500,
         labelThreshold: 0.01,

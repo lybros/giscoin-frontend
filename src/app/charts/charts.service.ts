@@ -8,10 +8,16 @@ const chartsMock = new ChartsMock();
 
 @Injectable()
 export class ChartsService {
-  getPieChartData() { return Observable.of(chartsMock.pieChartData); }
-  
-  getLineChartData() { return Observable.of(chartsMock.sinAndCos()); }
-  
-  getBarChartData() { return Observable.of(chartsMock.barChartData); }
+  getPieChartData() {
+    return Observable.of(chartsMock.pieChartData);
+  }
+
+  getLineChartData() {
+    return Observable.of(chartsMock.sinAndCos());
+  }
+
+  getBarChartData() {
+    return Observable.of(chartsMock.barChartData);
+  }
 
 }
