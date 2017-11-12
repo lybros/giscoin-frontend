@@ -27,6 +27,15 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
+    customLaunchers: {
+      'Chrome': {
+        base: 'ChromeHeadless',
+        flags: [
+          '--no-sandbox'
+        ],
+        debug: true
+      }
+    },
     browsers: ['Chrome'],
     singleRun: false
   });
