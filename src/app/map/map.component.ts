@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { latLng, tileLayer, Map } from 'leaflet';
+import { latLng, tileLayer, Map, LeafletEvent } from 'leaflet';
+
+type Event = LeafletEvent & {
+  [key: string]: any
+};
 
 @Component({
   selector: 'app-map',
@@ -10,7 +14,9 @@ import { latLng, tileLayer, Map } from 'leaflet';
 export class MapComponent implements OnInit {
   options: Object;
   drawOptions: Object;
-  layersControl: Object;
+  layersControl: {
+    baseLayers: Object
+  };
   activeLayer: Object;
   shown: Boolean;
 
@@ -43,7 +49,7 @@ export class MapComponent implements OnInit {
   }
 
   onMapReady(map: Map) {
-    map.on('draw:created', ({ layerType, layer }) => {
+    map.on('draw:created', ({ layerType, layer }: Event) => {
       if (layerType === 'rectangle') {
         const name = `user-layer-${Date.now()}`;
         this.layersControl.baseLayers[name] = layer;
@@ -51,7 +57,7 @@ export class MapComponent implements OnInit {
       }
     });
 
-    map.on('baselayerchange', ({ name, layer }) => {
+    map.on('baselayerchange', ({ name, layer }: Event) => {
       this.activeLayer = { name, layer };
     });
   }
