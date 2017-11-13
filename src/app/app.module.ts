@@ -4,6 +4,7 @@ import { NvD3Module } from 'ng2-nvd3';
 import 'nvd3';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
 import { ChartsComponent } from './charts/charts.component';
@@ -20,6 +21,7 @@ import { AuthService } from './auth.service';
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     NvD3Module,
     AppRoutingModule,
     HttpModule,
