@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="map-container">
+    <p>
+      Map Example:
+      <button (click)="shown = !shown">
+        {{shown ? 'Hide' : 'Show'}} Draw Controls
+      </button>
+    </p>
+    <div
+      class="map"
+      leaflet
+      [leafletOptions]="options"
+      [leafletLayersControl]="layersControl"
+      (leafletMapReady)="onMapReady($event)"
+    >
+      <div
+        *ngIf="shown"
+        leafletDraw
+        [leafletDrawOptions]="drawOptions"
+      ></div>
+    </div>
+  </div>
+
+  <div>
+    <p>Active Layer: </p>
+    <div *ngIf="activeLayer">
+      <p>{{activeLayer.name}}</p>
+      <pre class="coordinates">{{activeLayer.layer.getLatLngs()}}</pre>
+    </div>
+  </div>
+</div>
